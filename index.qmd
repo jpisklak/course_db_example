@@ -1,0 +1,9 @@
+---
+title: "Home"
+---
+
+This site is a working example of an outcome-aligned course database. Its purpose is to demonstrate how learning outcomes, assessment items, and instructional resources can be organized within a single framework for new and current instructors of PSYCH 213.
+
+**Use the navigation bar to browse Outcomes, Resources, and Items.**
+
+The site requires minimal ongoing curation, as most of its content is generated automatically using using <a href = "https://www.r-project.org/" target = "_blank"><img src = "https://www.r-project.org/Rlogo.png" style="height:1em; vertical-align:middle;" alt = "R" title = "R"></a>. Updates typically involve little more than editing a spreadsheet and adding new files for questions or local resources (e.g., datasets).

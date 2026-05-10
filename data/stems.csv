@@ -1,0 +1,4 @@
+ques,stem,answer
+item_1.Rmd,A student scored the following percentages on their end of the year exams:<br><br>* Alchemy: 82<br>* Astrology: 87<br>* Falconry: 78<br>* Logic: 89<br>* Music: 57<br>* Swordsmanship: 64<br>* Tarot: 81<br>* Xylomancy: 98<br><br>What was their mean score?<br>,79.5
+item_2.Rmd,"$\Phi$ is a very sacred number called the ""Golden Ratio"". Some people believe that it has magick properties which allow us, mere mortals, to understand more than just the natural world. It is approximately equal to:<br><br>1.6180339887498948482045868343656381177203091798057<br><br>Including the 1 preceding the decimal, what is the mode of the first 21 digits of $\Phi$?<br>",8
+item_5.Rmd,"Kitty rolled two six-sided die and plotted their values on the histogram below. What percentage of the rolls were either a 6, 7, or 8?<br><br>![](item_5.svg)<br>",30

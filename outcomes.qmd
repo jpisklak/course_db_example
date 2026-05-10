@@ -1,0 +1,73 @@
+---
+title: "Learning Outcomes"
+format:
+  html:
+    toc: true
+    toc-depth: 2
+---
+
+The general and specific outcomes presented here are meant as examples. Extra classifications like module, prerequisites, or Bloom's taxonomy, etc., aren't required. They are included below to show how additional contextual details about outcomes could be captured.
+
+```{r}
+#| label: load-outcomes
+#| message: false
+#| warning: false
+#| echo: false
+
+library(tidyverse)
+library(knitr)
+
+outcomes <- read_csv("data/outcomes.csv")
+
+outcomes <- outcomes |>
+  mutate(
+    GL_ID = as.integer(GL_ID),
+    SO_ID = as.integer(SO_ID)
+  )
+```
+
+```{r}
+#| echo: false
+#| label: print-outcomes
+#| results: asis
+#| message: false
+#| warning: false
+
+outcomes <- outcomes |>
+  mutate(outcome_ID = as.character(outcome_ID))
+
+# Split by general outcome
+for (g in sort(unique(outcomes$GL_ID))) {
+
+  gen <- outcomes |> filter(GL_ID == g, SO_ID == 0)
+  if (nrow(gen) == 0) next
+
+  gen_id   <- gen$outcome_ID[1]
+  gen_text <- gen$outcome_text[1]
+
+  # 1) Print the heading
+  cat("<br>\n\n")
+  cat(sprintf("## General Outcome %s \n", gen_id))
+  cat(sprintf("### %s\n", gen_text))
+  cat("<br>")
+  cat("Specific Outcomes:")
+  # 2) Print the table of specific outcomes (SO_ID != 0)
+  so_tbl <- outcomes |> 
+    filter(GL_ID == g, SO_ID != 0) |> 
+    arrange(SO_ID) |> 
+    select(
+      outcome_ID,
+      outcome_text,
+      module,
+      notes,
+      prereqs,
+      bloom
+    )
+
+    print(kable(so_tbl, col.names = c("ID", "Outcome", "Module", "Notes", "Prereqs", "Bloom")))
+    cat("\n\n\n")
+  
+}
+
+```
+

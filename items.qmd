@@ -1,0 +1,111 @@
+---
+title: "Items"
+---
+
+Selecting the <code>Item ID</code> will take you to a page displaying the question, answer, and (if available) worked solutions and other notes.
+
+Clicking the <code>Stem</code> can be used to quickly preview a question, but may not show all elements (e.g., graphs, mathmatical text, etc.).
+
+The <code>TXT</code> column shows the question and answer in raw text format for easy copying and pasting.
+
+The <code>Export</code> checkbox allows instructors to mark questions for export and generate a consolidated plain-text file for easy copying into an Canvas. Because the export is just raw text, images are not included.
+
+The <code>R Exam</code> column provides the item's R Markdown code for any instructors using the "<a href = "https://www.r-exams.org/" target = "_blank">exams R package</a>". This package enables you to do things like:
+
+- Randomize question order and question elements (e.g., values, names, etc.)
+- Display corresponing graphs, and other diagrams
+- Generate multiple exam versions automatically
+- Export exams to different formats (Canvas, Word documents, Webpages, PDFs, and more)
+
+**Note:** This approach requires solid knowledge of R and the *exams* package.
+
+<br>
+
+```{r}
+#| echo: false
+#| warning: false
+library(tidyverse)
+library(DT)
+
+items <- read_csv("data/items.csv")
+stem_df <- read_csv("data/stems.csv")
+# knitr::kable(items)
+
+# Add links
+  # Raw Text
+items$raw_txt <- sprintf(
+  '<a href="items/plain_txt/%s.txt" target = "_blank">%s</a>',
+  tolower(items$item_ID),
+  'TXT'
+)
+
+# R exam Rmd file
+items$rexam <- sprintf(
+  '<a href="items/rexams/%s.Rmd" target = "_blank">%s</a>',
+  tolower(items$item_ID),
+  'Rmd'
+)
+
+# Add export box
+items$export <- sprintf(
+  '<input type="checkbox" class="include-item" data-item-id="%s">',
+  tolower(items$item_ID)
+)
+
+
+# Issue might be that it doesn't like multiple boxes on a single page.
+
+  #HTML
+items$item_ID <- sprintf(
+  '<a href="item_pages/%s.html">%s</a>',
+  tolower(items$item_ID),
+  items$item_ID
+)
+
+# Replace stems to account for random generation
+items <- items |> 
+  mutate(
+    stem_ex = stem_df$stem,
+    Answer = stem_df$answer
+    )
+
+# Add drop menue
+items$stem_ex <- sprintf(
+  "<details><summary>%s</summary>%s</details>",
+  stringr::str_trunc(items$stem_ex, 15),
+  items$stem_ex
+)
+
+
+# Select and rename columns
+items <- items |> 
+  select(-c(q_file)) |>
+  relocate(stem_ex, Answer, .after = item_ID) |>
+  relocate(export, .after = raw_txt) |>
+  rename(
+    `Item ID` = item_ID,
+    `Raw Text` = raw_txt,
+    `R Exam` = rexam,
+    `Outcome ID` = outcome_IDs,
+    `Question Type` = q_type,
+    `Source Type` = source_type,
+    `Estimated Author Difficulty` = author_est_difficulty,
+    `Tags` = tags,
+    `Author` = author,
+    `Last Reviewed` = last_reviewed,
+    `Book Chapter` = textbook_chapter,
+    `Stem` = stem_ex,
+    `Export` = export
+    )
+
+datatable(
+    items, 
+    filter = "top", 
+    options = list(
+      pageLength = 10,
+    columnDefs = list(list(width = '250px', targets = 2))),
+    escape = FALSE,
+    # class = "table table-sm"
+)
+```
+

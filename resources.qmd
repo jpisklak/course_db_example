@@ -1,0 +1,68 @@
+---
+title: "Resources"
+---
+
+```{r}
+#| echo: false
+#| warning: false
+library(tidyverse)
+library(DT)
+resources <- read_csv("data/resources.csv")
+
+# Generate Link to CSV files
+for (i in 1: length(resources$link)) {
+  if (endsWith(resources$link[i], ".csv")) {
+    resources$link[i] <- sprintf(
+      '<a href="resources/data/%s">%s</a>',
+      resources$link[i],
+      paste0("💾 ", resources$link[i])
+    )
+  }
+}
+
+
+
+# Generate Link to README for CSV files
+for (i in 1: length(resources$notes)) {
+
+  if (endsWith(resources$notes[i], "README.md") & !is.na(resources$notes[i])) {
+    resources$notes[i] <- sprintf(
+      '<a href="resources/data/%s">%s</a>',
+      resources$notes[i],
+      "🗒️ README"
+    )
+  }
+}
+
+# Generate General Links
+for (i in 1: length(resources$link)) {
+  if (startsWith(resources$link[i], "https://")) {
+    resources$link[i] <- sprintf(
+      '<a href="%s" target = "_blank" rel="noopener noreferrer">%s</a>',
+      resources$link[i],
+      paste0("🌐 ", substr(resources$link[i], 1, 20), "..."
+    ))
+  }
+}
+
+# Select and rename columns
+resources <- resources |> 
+  rename(
+    `Resource ID` = resource_ID,
+    `Type` = type,
+    `Title` = title,
+    `Outcome ID` = outcome_IDs,
+    `Link` = link,
+    `Notes` = notes
+    )
+
+
+datatable(
+    resources, 
+    filter = "top", 
+    options = list(pageLength = 10),
+    escape = FALSE
+    # class = "table table-sm"
+)
+```
+

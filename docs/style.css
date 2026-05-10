@@ -1,0 +1,29 @@
+/* Ensure tables can span the full viewport */
+table.dataTable {
+  font-size: 0.9rem;
+}
+
+table.dataTable td,
+table.dataTable th {
+  padding: 0.35rem 0.5rem;
+}
+
+.navbar {
+  background-color: #275D38;
+}
+
+.navbar a,
+.navbar-brand {
+  color: #ffffff;
+}
+
+.navbar a:hover {
+  color: #f1c40f !important;
+}
+
+/* TOC */
+#TOC {
+  background-color: #f7f9f8;
+  border-left: 4px solid #275D38;
+  padding: 0.75rem;
+}

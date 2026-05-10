@@ -1,0 +1,4 @@
+"item_ID","q_file","outcome_IDs","q_type","source_type","author_est_difficulty","tags","author","last_reviewed","textbook_chapter","stem_ex"
+"Item_1","items/static/item_1.md",1.2,"num","rexams","easy","mean","Pisklak, J.","26-02-01","OpenIntro: 2.1","A student scored the following percentages on their end-of-year exams: Alchemy (82), Astrology (87), Falconry (78), Logic (89), Music (57), Swordsmanship (64), Tarot (81), and Xylomancy (98). What was their mean score?"
+"Item_2","items/static/item_2.md",1.1,"num","rexams","easy","mode","Pisklak, J.","26-02-01","OpenIntro: 2.1","Let Φ (the Golden Ratio) be approximately 1.618033988… Including the 1 before the decimal, what is the mode of the first 21 digits of Φ?"
+"Item_5","items/static/item_5.md",1.2,"num","rexams","medium","mean, histogram","Pisklak, J.","26-02-01","OpenIntro: 2.1","Two six-sided die were rolled repeatedly their values were plotted on the histogram below. What was the mean value obtained?"

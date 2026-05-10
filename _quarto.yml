@@ -1,0 +1,41 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - "*.qmd"
+    - "items/plain_txt/**/*"
+    - "!items/rexams/*.Rmd"   # don't render as pages
+  resources:
+    - items/rexams/**/*
+    - items/plain_txt/**/*
+    - items/markdown/**/*
+    - resources/data/**/*
+
+website:
+  title: "PSYCH 213 Course Database (Example)"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: outcomes.qmd
+        text: Outcomes
+      - href: items.qmd
+        text: Items
+      - href: resources.qmd
+        text: Resources
+      - href: export.qmd
+        text: Export
+
+format:
+  html:
+    page-layout: full
+    toc: false
+    css: style.css
+    html-math-method: mathjax
+    grid:
+      body-width: 1100px     # default is ~800px
+      margin-width: 250px    # default 250px;
+      gutter-width: 1rem     # space between columns
+    include-in-header:
+      - text: |
+          <script src="/scripts/exam-select.js"></script>

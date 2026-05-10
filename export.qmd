@@ -1,0 +1,215 @@
+---
+title: "Export"
+---
+
+<div id="selected-list"></div>
+
+<button id="download-exam" type="button">Download exam</button>
+<button id="clear-exam" type="button">Clear selection</button>
+
+<pre id="status" style="white-space:pre-wrap;"></pre>
+
+
+<script>
+/*
+  Export-page script (Tier 1)
+  - Reuses getSelectedItems() from assets/exam-select.js
+  - Fetches /items/markdown/<item_id>.md
+  - Extracts sections headed by "### Question" and "### Answer"
+  - Downloads a single exam.txt with an answer key
+*/
+
+// --- Utilities ---
+
+function rawUrlFor(itemId) {
+  // If your site is hosted under a subpath, you may need a relative path like "../items/markdown/..."
+  // return `/items/markdown/${itemId}.md`;
+  return `items/markdown/${itemId}.md`;
+}
+
+function escapeHtml(s) {
+  return String(s)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+}
+
+// Extract the content under a heading like:
+// ### Question
+// ...text...
+// ### Answer
+function extractSection(md, headingText) {
+  // match heading line and capture until next "### " heading or end-of-file
+  const re = new RegExp(
+    `(^|\\n)###\\s+${headingText}\\s*\\n([\\s\\S]*?)(?=\\n###\\s+|$)`,
+    "i"
+  );
+  const m = md.match(re);
+  return m ? m[2].trim() : "";
+}
+
+function downloadText(filename, text) {
+  const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+
+  URL.revokeObjectURL(url);
+}
+
+function setStatus(msg) {
+  const el = document.getElementById("status");
+  if (el) el.textContent = msg;
+}
+
+function appendStatus(msg) {
+  const el = document.getElementById("status");
+  if (el) el.textContent += msg;
+}
+
+// --- UI rendering ---
+
+function renderSelectedList(ids) {
+  const el = document.getElementById("selected-list");
+  if (!el) return;
+
+  if (!ids || ids.length === 0) {
+    el.innerHTML = "<p><em>No items selected.</em></p>";
+    return;
+  }
+
+  el.innerHTML =
+    "<p><strong>Selected items:</strong></p>" +
+    "<ul>" +
+    ids.map(id => `<li>${escapeHtml(id)}</li>`).join("") +
+    "</ul>";
+}
+
+// --- Main export logic ---
+
+async function fetchItemRaw(id) {
+  const url = rawUrlFor(id);
+  const resp = await fetch(url);
+
+  if (!resp.ok) {
+    return { id, ok: false, url, error: `HTTP ${resp.status}` };
+  }
+
+  const md = await resp.text();
+
+  const question = extractSection(md, "Question");
+  const answer   = extractSection(md, "Correct Answer");
+
+  return { id, ok: true, url, question, answer };
+}
+
+function buildExamText(itemsOk) {
+  let out = "";
+
+  // Questions section
+  itemsOk.forEach((it, i) => {
+    const n = i + 1;
+    const q = it.question && it.question.length ? it.question : "[Missing Question]";
+    out += `${n}. ${q}\n\n`;
+  });
+
+  out += "----------------------------------\n";
+  out += "Answer Key\n\n";
+
+  // Answer key
+  itemsOk.forEach((it, i) => {
+    const n = i + 1;
+    const a = it.answer && it.answer.length ? it.answer : "[Missing Answer]";
+    out += `${n}. ${a}\n`;
+  });
+
+  return out;
+}
+
+async function handleDownloadClick() {
+  // getSelectedItems() must exist in exam-select.js
+  if (typeof getSelectedItems !== "function") {
+    setStatus("Error: getSelectedItems() not found. Make sure /assets/exam-select.js is included on this page.");
+    return;
+  }
+
+  const ids = getSelectedItems();
+
+  if (!ids || ids.length === 0) {
+    setStatus("No items selected.");
+    return;
+  }
+
+  setStatus(`Fetching ${ids.length} item(s)...\n`);
+
+  // Fetch all in parallel (preserves ordering of ids)
+  const results = await Promise.all(ids.map(fetchItemRaw));
+
+  const failed = results.filter(r => !r.ok);
+  const ok = results.filter(r => r.ok);
+
+  if (failed.length) {
+    appendStatus("Some items could not be fetched:\n");
+    failed.forEach(f => appendStatus(`- ${f.id} (${f.url}): ${f.error}\n`));
+    appendStatus("\n");
+  }
+
+  if (!ok.length) {
+    appendStatus("No items could be exported.");
+    return;
+  }
+
+  // Warnings for missing sections
+  const missingQ = ok.filter(r => !r.question);
+  const missingA = ok.filter(r => !r.answer);
+
+  if (missingQ.length) {
+    appendStatus("Warning: missing '### Question' section in:\n");
+    missingQ.forEach(r => appendStatus(`- ${r.id}\n`));
+    appendStatus("\n");
+  }
+  if (missingA.length) {
+    appendStatus("Warning: missing '### Answer' section in:\n");
+    missingA.forEach(r => appendStatus(`- ${r.id}\n`));
+    appendStatus("\n");
+  }
+
+  const text = buildExamText(ok);
+
+  downloadText("exam.txt", text);
+
+  appendStatus("Downloaded exam.txt\n");
+}
+
+function handleClearClick() {
+  // Clear selection using the same key exam-select.js uses.
+  // If exam-select.js already provides a clear function, you can call it instead.
+  localStorage.removeItem("selected_items");
+
+  renderSelectedList([]);
+  setStatus("Selection cleared.");
+}
+
+// --- Wire up page ---
+
+document.addEventListener("DOMContentLoaded", () => {
+  const ids = (typeof getSelectedItems === "function") ? getSelectedItems() : [];
+  renderSelectedList(ids);
+
+  const btnDownload = document.getElementById("download-exam");
+  if (btnDownload) btnDownload.addEventListener("click", handleDownloadClick);
+
+  const btnClear = document.getElementById("clear-exam");
+  if (btnClear) btnClear.addEventListener("click", handleClearClick);
+
+  // If the helper isn't loaded, show a helpful message
+  if (typeof getSelectedItems !== "function") {
+    setStatus("Note: getSelectedItems() not found yet. Ensure /assets/exam-select.js is included site-wide.");
+  }
+});
+</script>

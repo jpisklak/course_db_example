@@ -1,0 +1,96 @@
+
+```{r data_gen, echo = FALSE, results = "hide", message = FALSE}
+# library(randomNames)
+# library(tidyverse)
+
+# set.seed(1778384294)
+name <- randomNames(which.names = "first")
+
+rolls <- sample(2:12, 20, replace = TRUE)
+sum_str = paste(sort(rolls), collapse = "+")
+
+table <- as.data.frame(table(rolls))
+table$prod <- paste(table$rolls, table$Freq, sep = "x")
+
+freq_678 <- filter(table, rolls %in% c(6, 7, 8))$Freq
+str_freq_678_add <- paste(freq_678, collapse = " + ")
+str_freq_678_comma <- paste(freq_678, collapse = ", ")
+
+freq_all <- table$Freq
+str_freq_all_add <- paste(freq_all, collapse = " + ")
+str_freq_all_comma <- paste(freq_all, collapse = ", ")
+
+## Solution
+res <- sum(freq_678) / sum(freq_all) * 100
+
+## Plot
+palette <- sample(palette.colors(palette = "Dark2"), 1)
+
+plt <-
+  ggplot(mapping = aes(x = rolls)) +
+  geom_histogram(binwidth = 1, colour = "black", fill = palette) +
+  scale_x_continuous(breaks = seq(2, 12, by = 1)) +
+  scale_y_continuous(breaks = seq(0, max(rolls), by = 1)) +
+  xlab("Roll Total") +
+  ylab("Frequency") +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 16),
+    axis.title = element_text(size = 16)
+  )
+
+fn <- "item_5"
+path <- file.path("items/rexams", paste0(fn, "_assets"))
+
+# Ensure matching tmp dir exists
+dir.create(path, recursive = TRUE, showWarnings = FALSE)
+
+# Save and load plot in temp dir
+ggsave(
+  file.path(path, paste0(fn, ".svg")),
+  plot = plt,
+  units = "cm",
+  width = 12,
+  height = 8
+)
+
+include_supplement(paste0(fn, ".svg"), dir = path)
+```
+
+Question
+========
+`r name` rolled two six-sided die and plotted their values on the histogram below. What percentage of the rolls were either a 6, 7, or 8?
+
+![](item_5.svg)
+
+
+Solution
+========
+Each bar shows the number of times a certain value was rolled. Therefore the total percentage of rolls for 6, 7, and 8 is . . .
+
+$$
+\begin{align}
+\text{Percent} &=
+\frac{`r str_freq_678_add`}{`r str_freq_all_add`} \times 100 \\[0.5em]
+&= \frac{`r sum(freq_678)`}{`r sum(freq_all)`} \times 100 \\[0.5em]
+&= `r fmt(res, 2)`
+\end{align}
+$$
+
+<br>
+
+**R Code:**
+
+```
+freq_678 <- c(`r str_freq_678_comma`)
+freq_tot <- c(`r str_freq_all_comma`)
+
+sum(freq_678) / sum(freq_tot) * 100
+```
+
+Meta-information
+================
+extype: num
+exsolution: `r res`
+exname: dice_mean
+extol: 0.01

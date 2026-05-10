@@ -1,0 +1,14 @@
+# Quarto / R clutter
+.quarto/
+.Rproj.user/
+.Rhistory
+.RData
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+/.quarto/
+
+
+**/*.quarto_ipynb
