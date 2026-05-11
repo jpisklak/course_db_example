@@ -1,0 +1,46 @@
+```{r, echo = FALSE, results = "hide"}
+n <- sample(10:15, 1)
+x <- round(rnorm(n, 0, 1), 2)
+s <- sd(x)
+```
+
+Question
+========
+What happens to the sample standard deviation of the values below if 100 is added to each of them?
+
+`r paste(x, collapse = ", ")`
+
+Answerlist
+----------
+* The standard deviation has 100 added to it
+* The standard deviation stays the same
+* The standard deviation has 100 subtracted from it
+* The standard deviation is divided by 100
+* The standard deviation is multiplied by 100
+
+
+Solution
+========
+Adding a constant to all values in a dataset does not change the standard deviation.
+
+The standard deviation measures the spread or variability of the data around the mean. When you add a constant to every value, you shift all the data points by the same amount, which shifts the mean by that same amount. However, the distances between each data point and the mean remain unchanged.
+
+We can verify this with the data:
+
+```r
+x <- c(`r paste(x, collapse = ", ")`)
+
+sd(x)        # Original SD
+sd(x + 100)  # SD after adding 100
+```
+
+Both standard deviations are equal to `r round(s, 4)`
+
+Therefore, the standard deviation stays the same.
+
+Meta-information
+================
+exname: sd_shift
+extype: schoice
+exsolution: 01000
+exshuffle: TRUE

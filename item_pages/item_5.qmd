@@ -46,5 +46,5 @@ sum(freq_678) / sum(freq_tot) * 100
 
 ---
 
-<div class="item-nav" style="display:flex; gap:1rem; justify-content:space-between; margin: 1rem 0 2rem 0;"><a href="item_4.html">← Previous (item_4)</a><span></span></div>
+<div class="item-nav" style="display:flex; gap:1rem; justify-content:space-between; margin: 1rem 0 2rem 0;"><a href="item_4.html">← Previous (item_4)</a><a href="item_6.html">Next (item_6) →</a></div>
 

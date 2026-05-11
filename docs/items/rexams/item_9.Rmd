@@ -1,0 +1,33 @@
+```{r, echo = FALSE, results = "hide", message = FALSE}
+include_supplement("pearson_lee_1903.csv", dir = "../resources/data")
+
+# Values
+heights <- read.csv("pearson_lee_1903.csv")
+res <- mean(heights$child * 2.54)
+```
+
+Question
+========
+Using the data file `pearson_lee_1903.csv`, convert the children's heights
+into centimetres (the data file has them in inches). Then calculate the
+mean height of all the children.
+
+Note: 1 in = 2.54 cm
+
+
+Solution
+========
+```r
+# Load data
+heights <- read.csv("pearson_lee_1903.csv")
+
+# Convert values to cm and calculate mean
+result <- mean(heights$child * 2.54)
+```
+
+Meta-information
+================
+exname: child_heights_cm
+extype: num
+exsolution: `r res`
+extol: 0.01

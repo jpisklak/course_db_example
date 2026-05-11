@@ -7,6 +7,20 @@
     "text": "Selecting the Item ID will take you to a page displaying the question, answer, and (if available) worked solutions and other notes.\nClicking the Stem can be used to quickly preview a question, but may not show all elements (e.g., graphs, mathmatical text, etc.).\nThe TXT column shows the question and answer in raw text format for easy copying and pasting.\nThe Export checkbox allows instructors to mark questions for export and generate a consolidated plain-text file for easy copying into an Canvas. Because the export is just raw text, images are not included.\nThe R Exam column provides the item’s R Markdown code for any instructors using the “exams R package”. This package enables you to do things like:\n\nRandomize question order and question elements (e.g., values, names, etc.)\nDisplay corresponing graphs, and other diagrams\nGenerate multiple exam versions automatically\nExport exams to different formats (Canvas, Word documents, Webpages, PDFs, and more)\n\nNote: This approach requires solid knowledge of R and the exams package."
   },
   {
+    "objectID": "item_pages/item_8.html",
+    "href": "item_pages/item_8.html",
+    "title": "Item 8",
+    "section": "",
+    "text": "Include in export \n\nWhat happens to the sample standard deviation of the values below if 100 is added to each of them?\n0.05, -0.42, -0.84, -2.04, -0.2, 0.24, 0.79, 2.46, -0.86, 1.3, 2.56, 1.8, -0.08, -1.51\n\nThe standard deviation is multiplied by 100\nThe standard deviation has 100 added to it\nThe standard deviation stays the same\nThe standard deviation has 100 subtracted from it\nThe standard deviation is divided by 100\n\n\nCorrect Answer\nFALSE, FALSE, TRUE, FALSE, FALSE\n\n\nSolution:\nAdding a constant to all values in a dataset does not change the standard deviation.\nThe standard deviation measures the spread or variability of the data around the mean. When you add a constant to every value, you shift all the data points by the same amount, which shifts the mean by that same amount. However, the distances between each data point and the mean remain unchanged.\nWe can verify this with the data:\nx &lt;- c(0.05, -0.42, -0.84, -2.04, -0.2, 0.24, 0.79, 2.46, -0.86, 1.3, 2.56, 1.8, -0.08, -1.51)\n\nsd(x)        # Original SD\nsd(x + 100)  # SD after adding 100\nBoth standard deviations are equal to 1.4026\nTherefore, the standard deviation stays the same.\n\n\n\n← Previous (item_7)Next (item_9) →"
+  },
+  {
+    "objectID": "item_pages/item_6.html",
+    "href": "item_pages/item_6.html",
+    "title": "Item 6",
+    "section": "",
+    "text": "Include in export \n\nThe following histogram depicts the distribution of defence points for all of the Pokemon characters (up to generation VII) in the popular video game franchise Pokémon. According to the esteemed Pokémon Database, defence points, “measure the ability to take attacks from other Pokémon; the higher the stat is, the fewer Hit Points will be lost when attacked.”\n\n\n\nHistogram of Pokémon Defence Point Values\n\n\nUsing inequalities (i.e., greater and less than symbols &gt; &lt;), choose the option that best describes this distribution:\n\nMean &lt; Median &gt; Mode\nMedian &gt; Mode &gt; Mean\nMode &gt; Median &gt; Mean\nMean &gt; Median &gt; Mode\nMedian &gt; Mean &gt; Mode\n\n\nCorrect Answer\nFALSE, FALSE, FALSE, TRUE, FALSE\n\n\nSolution:\nExtreme values on the right side will pull the mean towards the right the most, followed by the median, and then the mode.\nValues on the right side of the x-axis have a larger numerical value than values on the left.\nIn a right-skewed distribution like this one, the mean is pulled most strongly by extreme values, making it the largest measure of central tendency, followed by the median, then the mode.\nThus, the answer is: Mean &gt; Median &gt; Mode\n\n\n\n← Previous (item_5)Next (item_7) →"
+  },
+  {
     "objectID": "item_pages/item_4.html",
     "href": "item_pages/item_4.html",
     "title": "Item 4",
@@ -53,7 +67,21 @@
     "href": "item_pages/item_5.html",
     "title": "Item 5",
     "section": "",
-    "text": "Include in export \n\nDestinee rolled two six-sided die and plotted their values on the histogram below. What percentage of the rolls were either a 6, 7, or 8?\n\n\nCorrect Answer\n35\n\n\nSolution:\nEach bar shows the number of times a certain value was rolled. Therefore the total percentage of rolls for 6, 7, and 8 is . . .\n\\[\n\\begin{align}\n\\text{Percent} &=\n\\frac{2+1+4}{1+2+3+1+2+1+4+2+2+2} \\times 100 \\\\[0.5em]\n&= \\frac{7}{20} \\times 100 \\\\[0.5em]\n&= 35.00\n\\end{align}\n\\]\n\nR Code:\nfreq_678 &lt;- c(2, 1, 4)\nfreq_tot &lt;- c(1, 2, 3, 1, 2, 1, 4, 2, 2, 2)\n\nsum(freq_678) / sum(freq_tot) * 100\n\n\n\n← Previous (item_4)"
+    "text": "Include in export \n\nDestinee rolled two six-sided die and plotted their values on the histogram below. What percentage of the rolls were either a 6, 7, or 8?\n\n\nCorrect Answer\n35\n\n\nSolution:\nEach bar shows the number of times a certain value was rolled. Therefore the total percentage of rolls for 6, 7, and 8 is . . .\n\\[\n\\begin{align}\n\\text{Percent} &=\n\\frac{2+1+4}{1+2+3+1+2+1+4+2+2+2} \\times 100 \\\\[0.5em]\n&= \\frac{7}{20} \\times 100 \\\\[0.5em]\n&= 35.00\n\\end{align}\n\\]\n\nR Code:\nfreq_678 &lt;- c(2, 1, 4)\nfreq_tot &lt;- c(1, 2, 3, 1, 2, 1, 4, 2, 2, 2)\n\nsum(freq_678) / sum(freq_tot) * 100\n\n\n\n← Previous (item_4)Next (item_6) →"
+  },
+  {
+    "objectID": "item_pages/item_7.html",
+    "href": "item_pages/item_7.html",
+    "title": "Item 7",
+    "section": "",
+    "text": "Include in export \n\nThe mean of two numbers is 639.5, and one number is 37 more than the other. What is the value of the smaller of the two numbers?\n\nCorrect Answer\n621\n\n\nSolution:\nWe can solve this with some basic algebra where \\(x\\) is the smaller of the two numbers:\n\\[\n\\begin{align}\n\\frac{x + (x + 37)}{2} &= 639.5 \\\\[0.5em]\n\\frac{2x + 37}{2}      &= 639.5 \\\\[0.5em]\n2x + 37                &= 639.5 \\times 2 \\\\[0.5em]\n2x                            &= (639.5 \\times 2) - 37 \\\\[0.5em]\nx                             &= \\frac{(639.5 \\times 2) - 37}{2} \\\\[0.5em]\nx                             &= 621\n\\end{align}\n\\]\n\n\n\n← Previous (item_6)Next (item_8) →"
+  },
+  {
+    "objectID": "item_pages/item_9.html",
+    "href": "item_pages/item_9.html",
+    "title": "Item 9",
+    "section": "",
+    "text": "Include in export \n\nUsing the data file pearson_lee_1903.csv, convert the children’s heights into centimetres (the data file has them in inches). Then calculate the mean height of all the children.\nNote: 1 in = 2.54 cm\n\nCorrect Answer\n167.7142933\n\n\nSolution:\n# Load data\nheights &lt;- read.csv(\"pearson_lee_1903.csv\")\n\n# Convert values to cm and calculate mean\nresult &lt;- mean(heights$child * 2.54)\n\n\n\n← Previous (item_8)"
   },
   {
     "objectID": "outcomes.html",

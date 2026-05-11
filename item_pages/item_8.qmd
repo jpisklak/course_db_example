@@ -1,0 +1,49 @@
+---
+title: Item 8
+page-layout: full
+---
+
+<div class="exam-select">
+<label>
+<input type="checkbox" class="include-item" data-item-id="item_8">
+Include in export
+</label>
+</div>
+
+What happens to the sample standard deviation of the values below if 100 is added to each of them?
+
+0.05, -0.42, -0.84, -2.04, -0.2, 0.24, 0.79, 2.46, -0.86, 1.3, 2.56, 1.8, -0.08, -1.51
+
+*  The standard deviation is multiplied by 100
+*  The standard deviation has 100 added to it
+*  The standard deviation stays the same
+*  The standard deviation has 100 subtracted from it
+*  The standard deviation is divided by 100
+
+### Correct Answer
+FALSE, FALSE, TRUE, FALSE, FALSE
+
+### Solution:
+Adding a constant to all values in a dataset does not change the standard deviation.
+
+The standard deviation measures the spread or variability of the data around the mean. When you add a constant to every value, you shift all the data points by the same amount, which shifts the mean by that same amount. However, the distances between each data point and the mean remain unchanged.
+
+We can verify this with the data:
+
+```r
+x <- c(0.05, -0.42, -0.84, -2.04, -0.2, 0.24, 0.79, 2.46, -0.86, 1.3, 2.56, 1.8, -0.08, -1.51)
+
+sd(x)        # Original SD
+sd(x + 100)  # SD after adding 100
+```
+
+Both standard deviations are equal to 1.4026
+
+Therefore, the standard deviation stays the same.
+
+<br>
+
+---
+
+<div class="item-nav" style="display:flex; gap:1rem; justify-content:space-between; margin: 1rem 0 2rem 0;"><a href="item_7.html">← Previous (item_7)</a><a href="item_9.html">Next (item_9) →</a></div>
+

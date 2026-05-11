@@ -79,7 +79,7 @@ items$stem_ex <- sprintf(
 
 # Select and rename columns
 items <- items |> 
-  select(-c(q_file, Answer)) |>
+  select(-c(Answer)) |>
   relocate(stem_ex, .after = item_ID) |>
   relocate(export, .after = raw_txt) |>
   rename(

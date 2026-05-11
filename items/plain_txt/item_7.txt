@@ -1,0 +1,8 @@
+Question: item_7
+
+The mean of two numbers is 639.5, and one number is 37 more than the other. What is the value of the smaller of the two numbers?
+
+
+
+Correct Answer:
+621

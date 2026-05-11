@@ -1,0 +1,35 @@
+```{r, echo = FALSE, results = "hide"}
+nums <- sort(sample(1:1000, 2))
+M <- mean(nums)
+delta <- nums[2] - nums[1]
+res <- nums[1]
+```
+
+Question
+========
+
+The mean of two numbers is `r M`, and one number is `r delta` more than the other. What is the value of the smaller of the two numbers?
+
+
+Solution
+========
+We can solve this with some basic algebra where $x$ is the smaller of the two numbers:
+
+$$
+\begin{align}
+\frac{x + (x + `r delta`)}{2} &= `r M` \\[0.5em]
+\frac{2x + `r delta`}{2}      &= `r M` \\[0.5em]
+2x + `r delta`                &= `r M` \times 2 \\[0.5em]
+2x                            &= (`r M` \times 2) - `r delta` \\[0.5em]
+x                             &= \frac{(`r M` \times 2) - `r delta`}{2} \\[0.5em]
+x                             &= `r round(res, 5)`
+\end{align}
+$$
+
+
+Meta-information
+================
+extype: num
+exsolution: `r res`
+exname: mean_of_two
+extol: 0.0001

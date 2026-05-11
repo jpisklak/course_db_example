@@ -1,0 +1,13 @@
+Question: item_8
+What happens to the sample standard deviation of the values below if 100 is added to each of them?
+
+0.05, -0.42, -0.84, -2.04, -0.2, 0.24, 0.79, 2.46, -0.86, 1.3, 2.56, 1.8, -0.08, -1.51
+
+*  The standard deviation is multiplied by 100
+*  The standard deviation has 100 added to it
+*  The standard deviation stays the same
+*  The standard deviation has 100 subtracted from it
+*  The standard deviation is divided by 100
+
+Correct Answer:
+FALSE, FALSE, TRUE, FALSE, FALSE

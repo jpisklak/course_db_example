@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Item 5 – PSYCH 213 Course Database (Example)</title>
+<title>Item 7 – PSYCH 213 Course Database (Example)</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -22,41 +22,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -194,7 +159,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Item 5</h1>
+<h1 class="title">Item 7</h1>
 </div>
 
 
@@ -212,35 +177,30 @@ window.Quarto = {
 
 
 <div class="exam-select">
-<p><label> <input type="checkbox" class="include-item" data-item-id="item_5"> Include in export </label></p>
+<p><label> <input type="checkbox" class="include-item" data-item-id="item_7"> Include in export </label></p>
 </div>
-<p>Destinee rolled two six-sided die and plotted their values on the histogram below. What percentage of the rolls were either a 6, 7, or 8?</p>
-<p><img src="../items/rexams/item_5_assets/item_5.svg" class="img-fluid"></p>
+<p>The mean of two numbers is 639.5, and one number is 37 more than the other. What is the value of the smaller of the two numbers?</p>
 <section id="correct-answer" class="level3">
 <h3 class="anchored" data-anchor-id="correct-answer">Correct Answer</h3>
-<p>35</p>
+<p>621</p>
 </section>
 <section id="solution" class="level3">
 <h3 class="anchored" data-anchor-id="solution">Solution:</h3>
-<p>Each bar shows the number of times a certain value was rolled. Therefore the total percentage of rolls for 6, 7, and 8 is . . .</p>
+<p>We can solve this with some basic algebra where <span class="math inline">\(x\)</span> is the smaller of the two numbers:</p>
 <p><span class="math display">\[
 \begin{align}
-\text{Percent} &amp;=
-\frac{2+1+4}{1+2+3+1+2+1+4+2+2+2} \times 100 \\[0.5em]
-&amp;= \frac{7}{20} \times 100 \\[0.5em]
-&amp;= 35.00
+\frac{x + (x + 37)}{2} &amp;= 639.5 \\[0.5em]
+\frac{2x + 37}{2}      &amp;= 639.5 \\[0.5em]
+2x + 37                &amp;= 639.5 \times 2 \\[0.5em]
+2x                            &amp;= (639.5 \times 2) - 37 \\[0.5em]
+x                             &amp;= \frac{(639.5 \times 2) - 37}{2} \\[0.5em]
+x                             &amp;= 621
 \end{align}
 \]</span></p>
 <p><br></p>
-<p><strong>R Code:</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>freq_678 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">4</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>freq_tot <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(freq_678) <span class="sc">/</span> <span class="fu">sum</span>(freq_tot) <span class="sc">*</span> <span class="dv">100</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p><br></p>
 <hr>
 <div class="item-nav" style="display:flex; gap:1rem; justify-content:space-between; margin: 1rem 0 2rem 0;">
-<a href="item_4.html">← Previous (item_4)</a><a href="item_6.html">Next (item_6) →</a>
+<a href="item_6.html">← Previous (item_6)</a><a href="item_8.html">Next (item_8) →</a>
 </div>
 
 

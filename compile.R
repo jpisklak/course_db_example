@@ -11,6 +11,9 @@ source("scripts/ods_to_csv.R")
 # as.integer(Sys.time())
 set.seed(1778443160)
 
+# Create temp dir for exams package
+if (!dir.exists("./temp_dir")) {dir.create("./temp_dir")}
+
 # Generate .txt and .md files from .Rmd files
 source("scripts/gen_item_files.R")
 rm(list = setdiff(ls(), lsf.str())) # remove non-function variables
