@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Items – PSYCH 213 Course Database (Example)</title>
+<title>Item 4 – PSYCH 213 Course Database (Example)</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,26 +23,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-d56d2c19f33503b869413ea5c9174676.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-d56d2c19f33503b869413ea5c9174676.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,24 +105,39 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<link href="site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet">
-<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-<script src="site_libs/datatables-binding-0.34.0/datatables.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
-<link href="site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
-<script src="site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
-<link href="site_libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet">
-<script src="site_libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
-<link href="site_libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet">
-<script src="site_libs/selectize-0.12.0/selectize.min.js"></script>
-<link href="site_libs/crosstalk-1.2.2/css/crosstalk.min.css" rel="stylesheet">
-<script src="site_libs/crosstalk-1.2.2/js/crosstalk.min.js"></script>
-<script src="./scripts/exam-select.js"></script>
+<script src="../scripts/exam-select.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<link rel="stylesheet" href="style.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -97,7 +147,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">PSYCH 213 Course Database (Example)</span>
     </a>
   </div>
@@ -108,23 +158,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./outcomes.html"> 
+    <a class="nav-link" href="../outcomes.html"> 
 <span class="menu-text">Outcomes</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./items.html" aria-current="page"> 
+    <a class="nav-link" href="../items.html"> 
 <span class="menu-text">Items</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resources.html"> 
+    <a class="nav-link" href="../resources.html"> 
 <span class="menu-text">Resources</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./export.html"> 
+    <a class="nav-link" href="../export.html"> 
 <span class="menu-text">Export</span></a>
   </li>  
 </ul>
@@ -144,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Items</h1>
+<h1 class="title">Item 4</h1>
 </div>
 
 
@@ -161,27 +211,78 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Selecting the <code>Item ID</code> will take you to a page displaying the question, answer, and (if available) worked solutions and other notes.</p>
-<p>Clicking the <code>Stem</code> can be used to quickly preview a question, but may not show all elements (e.g., graphs, mathmatical text, etc.).</p>
-<p>The <code>TXT</code> column shows the question and answer in raw text format for easy copying and pasting.</p>
-<p>The <code>Export</code> checkbox allows instructors to mark questions for export and generate a consolidated plain-text file for easy copying into an Canvas. Because the export is just raw text, images are not included.</p>
-<p>The <code>R Exam</code> column provides the item’s R Markdown code for any instructors using the “<a href="https://www.r-exams.org/" target="_blank">exams R package</a>”. This package enables you to do things like:</p>
-<ul>
-<li>Randomize question order and question elements (e.g., values, names, etc.)</li>
-<li>Display corresponing graphs, and other diagrams</li>
-<li>Generate multiple exam versions automatically</li>
-<li>Export exams to different formats (Canvas, Word documents, Webpages, PDFs, and more)</li>
-</ul>
-<p><strong>Note:</strong> This approach requires solid knowledge of R and the <em>exams</em> package.</p>
+<div class="exam-select">
+<p><label> <input type="checkbox" class="include-item" data-item-id="item_4"> Include in export </label></p>
+</div>
+<p>A researcher had five different groups of rats in an experiment. Each group of rats was given a different dosage of caffeine. The number of rats in each group and their dosage in milligrams (mg) is below. What was the mean dose of caffeine across all the rats?</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Group</th>
+<th>Rats</th>
+<th>Dose</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Control</td>
+<td>14</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>9</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>11</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>C</td>
+<td>6</td>
+<td>16</td>
+</tr>
+<tr class="odd">
+<td>D</td>
+<td>15</td>
+<td>32</td>
+</tr>
+</tbody>
+</table>
+<section id="correct-answer" class="level3">
+<h3 class="anchored" data-anchor-id="correct-answer">Correct Answer</h3>
+<p>12.72727</p>
+</section>
+<section id="solution" class="level3">
+<h3 class="anchored" data-anchor-id="solution">Solution:</h3>
+<p>The mean dose is <strong>12.73 mg</strong> (rounded to two decimal places).</p>
+<p>This is a <strong>weighted mean</strong> problem, where each dose is weighted by the number of rats receiving that dose.</p>
+<p>The formula is: <span class="math display">\[\bar{x} = \frac{\sum_{i=1}^{n} w_i x_i}{\sum_{i=1}^{n} w_i}\]</span></p>
+<p>Calculating: <span class="math display">\[
+\begin{align}
+\bar{x}
+&amp;= \frac{14 \times 0 + 9 \times 4 + 11 \times 8 + 6 \times 16 + 15 \times 32}{14 + 9 + 11 + 6 + 15} \\[0.5em]
+&amp;= \frac{0 + 36 + 88 + 96 + 480}{55} \\[0.5em]
+&amp;= \frac{700}{55} \\[0.5em]
+&amp;= 12.727\overline{27}
+\end{align}
+\]</span></p>
+<p><strong>R code:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">8</span>, <span class="dv">16</span>, <span class="dv">32</span>)   <span class="co"># doses in mg</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>w <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">14</span>, <span class="dv">9</span>, <span class="dv">11</span>, <span class="dv">6</span>, <span class="dv">15</span>)  <span class="co"># number of rats (weights)</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>weighted_mean <span class="ot">&lt;-</span> <span class="fu">sum</span>(x <span class="sc">*</span> w) <span class="sc">/</span> <span class="fu">sum</span>(w)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>weighted_mean</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><br></p>
-<div class="cell">
-<div class="cell-output-display">
-<div class="datatables html-widget html-fill-item" id="htmlwidget-121a4e66dc5a1477c97b" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-121a4e66dc5a1477c97b">{"x":{"filter":"top","vertical":false,"filterHTML":"<tr>\n  <td><\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none;position: absolute;width: 200px;opacity: 1\">\n      <div data-min=\"1.1\" data-max=\"1.2\" data-scale=\"1\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\" disabled=\"\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\" disabled=\"\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\" disabled=\"\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","data":[["1","2","3","4","5"],["<a href=\"item_pages/item_1.html\">Item_1<\/a>","<a href=\"item_pages/item_2.html\">Item_2<\/a>","<a href=\"item_pages/item_3.html\">Item_3<\/a>","<a href=\"item_pages/item_4.html\">Item_4<\/a>","<a href=\"item_pages/item_5.html\">Item_5<\/a>"],["<details><summary>A student sc...<\/summary>A student scored the following percentages on their end of the year exams:<br><br>* Alchemy: 47<br>* Astrology: 32<br>* Falconry: 37<br>* Logic: 89<br>* Music: 56<br>* Swordsmanship: 35<br>* Tarot: 46<br>* Xylomancy: 34<br><br>What was their mean score?<br><\/details>","<details><summary>$\\Phi$ is a ...<\/summary>$\\Phi$ is a very sacred number called the \"Golden Ratio\". Some people believe that it has magick properties which allow us, mere mortals, to understand more than just the natural world. It is approximately equal to:<br><br>1.6180339887498948482045868343656381177203091798057<br><br>Including the 1 preceding the decimal, what is the mode of the first 21 digits of $\\Phi$?<br><\/details>","<details><summary>Which of the...<\/summary>Which of the following is a valid way to label a sample mean? Select all that apply.<br><\/details>","<details><summary>A researcher...<\/summary>A researcher had five different groups of rats in an experiment. Each group of rats was given a different dosage of caffeine. The number of rats in each group and their dosage in milligrams (mg) is below. What was the mean dose of caffeine across all the rats?<br><br>| Group   | Rats | Dose |<br>|---------|------|------|<br>| Control | 14   | 0    |<br>| A       | 9    | 4    |<br>| B       | 11   | 8    |<br>| C       | 6    | 16   |<br>| D       | 15   | 32   |<\/details>","<details><summary>Destinee rol...<\/summary>Destinee rolled two six-sided die and plotted their values on the histogram below. What percentage of the rolls were either a 6, 7, or 8?<br><br>![](item_5.svg)<br><\/details>"],[1.2,1.1,null,1.2,1.2],["num","num","mchoice","num","num"],["rexams","rexams","rexams","rexams","rexams"],["easy","easy","easy","medium","medium"],["mean","mode","mean, parameters, statistics","weighted mean, mean","mean, histogram"],["Pisklak, J.","Pisklak, J.","Pisklak, J.","Pisklak, J.","Pisklak, J."],["26-02-01","26-02-01","26-02-01","26-02-01","26-02-01"],["OpenIntro: 2.1","OpenIntro: 2.1",null,null,"OpenIntro: 2.1"],["<a href=\"items/plain_txt/item_1.txt\" target = \"_blank\">TXT<\/a>","<a href=\"items/plain_txt/item_2.txt\" target = \"_blank\">TXT<\/a>","<a href=\"items/plain_txt/item_3.txt\" target = \"_blank\">TXT<\/a>","<a href=\"items/plain_txt/item_4.txt\" target = \"_blank\">TXT<\/a>","<a href=\"items/plain_txt/item_5.txt\" target = \"_blank\">TXT<\/a>"],["<input type=\"checkbox\" class=\"include-item\" data-item-id=\"item_1\">","<input type=\"checkbox\" class=\"include-item\" data-item-id=\"item_2\">","<input type=\"checkbox\" class=\"include-item\" data-item-id=\"item_3\">","<input type=\"checkbox\" class=\"include-item\" data-item-id=\"item_4\">","<input type=\"checkbox\" class=\"include-item\" data-item-id=\"item_5\">"],["<a href=\"items/rexams/item_1.Rmd\" target = \"_blank\">Rmd<\/a>","<a href=\"items/rexams/item_2.Rmd\" target = \"_blank\">Rmd<\/a>","<a href=\"items/rexams/item_3.Rmd\" target = \"_blank\">Rmd<\/a>","<a href=\"items/rexams/item_4.Rmd\" target = \"_blank\">Rmd<\/a>","<a href=\"items/rexams/item_5.Rmd\" target = \"_blank\">Rmd<\/a>"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Item ID<\/th>\n      <th>Stem<\/th>\n      <th>Outcome ID<\/th>\n      <th>Question Type<\/th>\n      <th>Source Type<\/th>\n      <th>Estimated Author Difficulty<\/th>\n      <th>Tags<\/th>\n      <th>Author<\/th>\n      <th>Last Reviewed<\/th>\n      <th>Book Chapter<\/th>\n      <th>Raw Text<\/th>\n      <th>Export<\/th>\n      <th>R Exam<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":10,"columnDefs":[{"width":"250px","targets":2},{"className":"dt-right","targets":3},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"Item ID","targets":1},{"name":"Stem","targets":2},{"name":"Outcome ID","targets":3},{"name":"Question Type","targets":4},{"name":"Source Type","targets":5},{"name":"Estimated Author Difficulty","targets":6},{"name":"Tags","targets":7},{"name":"Author","targets":8},{"name":"Last Reviewed","targets":9},{"name":"Book Chapter","targets":10},{"name":"Raw Text","targets":11},{"name":"Export","targets":12},{"name":"R Exam","targets":13}],"order":[],"autoWidth":false,"orderClasses":false,"orderCellsTop":true}},"evals":[],"jsHooks":[]}</script>
-</div>
+<hr>
+<div class="item-nav" style="display:flex; gap:1rem; justify-content:space-between; margin: 1rem 0 2rem 0;">
+<a href="item_3.html">← Previous (item_3)</a><a href="item_5.html">Next (item_5) →</a>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

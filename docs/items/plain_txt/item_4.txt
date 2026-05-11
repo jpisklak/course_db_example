@@ -1,0 +1,14 @@
+Question: item_4
+A researcher had five different groups of rats in an experiment. Each group of rats was given a different dosage of caffeine. The number of rats in each group and their dosage in milligrams (mg) is below. What was the mean dose of caffeine across all the rats?
+
+| Group   | Rats | Dose |
+|---------|------|------|
+| Control | 14   | 0    |
+| A       | 9    | 4    |
+| B       | 11   | 8    |
+| C       | 6    | 16   |
+| D       | 15   | 32   |
+
+
+Correct Answer:
+12.72727

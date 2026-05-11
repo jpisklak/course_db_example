@@ -1,16 +1,18 @@
 Question: item_1
 A student scored the following percentages on their end of the year exams:
 
-* Alchemy: 82
-* Astrology: 87
-* Falconry: 78
+* Alchemy: 47
+* Astrology: 32
+* Falconry: 37
 * Logic: 89
-* Music: 57
-* Swordsmanship: 64
-* Tarot: 81
-* Xylomancy: 98
+* Music: 56
+* Swordsmanship: 35
+* Tarot: 46
+* Xylomancy: 34
 
 What was their mean score?
 
+
+
 Correct Answer:
-79.5
+47

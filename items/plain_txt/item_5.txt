@@ -1,7 +1,9 @@
 Question: item_5
-Kitty rolled two six-sided die and plotted their values on the histogram below. What percentage of the rolls were either a 6, 7, or 8?
+Destinee rolled two six-sided die and plotted their values on the histogram below. What percentage of the rolls were either a 6, 7, or 8?
 
 ![](item_5.svg)
 
+
+
 Correct Answer:
-30
+35

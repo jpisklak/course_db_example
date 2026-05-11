@@ -52,6 +52,9 @@ for (i in 1:length(files)) {
     "\n",
     paste(q_i$exam1$exercise1$question, sep = "", collapse = "\n"),
     "\n",
+    if (length(q_i$exam1$exercise1$questionlist) > 0){
+    paste(paste("* ", q_i$exam1$exercise1$questionlist), sep = "", collapse = "\n")},
+    "\n\n",
     "Correct Answer:",
     "\n",
     paste(q_i$exam1$exercise1$metainfo$solution, sep = "", collapse = "\n"),
@@ -67,6 +70,9 @@ for (i in 1:length(files)) {
     # "\n\n",
     paste(q_i$exam1$exercise1$question, sep = "", collapse = "\n"),
     "\n",
+    if (length(q_i$exam1$exercise1$questionlist) > 0){
+    paste(paste("* ", q_i$exam1$exercise1$questionlist), sep = "", collapse = "\n")},
+    "\n\n",
     "### Correct Answer",
     "\n",
     paste(q_i$exam1$exercise1$metainfo$solution, sep = "", collapse = "\n"),
@@ -79,7 +85,7 @@ for (i in 1:length(files)) {
   )
 
   df_stems$stem[i] <- paste(q_i$exam1$exercise1$question, collapse = "<br>")
-  df_stems$answer[i] <- as.character(q_i$exam1$exercise1$metainfo$solution)
+  df_stems$answer[i] <- paste(as.character(q_i$exam1$exercise1$metainfo$solution), collapse = " ")
 }
 
 write_csv(df_stems, "data/stems.csv")

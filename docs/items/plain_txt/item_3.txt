@@ -1,0 +1,15 @@
+Question: item_3
+Which of the following is a valid way to label a sample mean? Select all that apply.
+
+*  $\sigma$
+*  $\bar{x}$
+*  $\bar{y}$
+*  $\hat{x}$
+*  $\mu$
+
+Correct Answer:
+FALSE
+TRUE
+TRUE
+FALSE
+FALSE

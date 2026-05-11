@@ -1,0 +1,48 @@
+---
+title: Item 3
+page-layout: full
+---
+
+<div class="exam-select">
+<label>
+<input type="checkbox" class="include-item" data-item-id="item_3">
+Include in export
+</label>
+</div>
+
+Which of the following is a valid way to label a sample mean? Select all that apply.
+
+*  $\sigma$
+*  $\bar{x}$
+*  $\bar{y}$
+*  $\hat{x}$
+*  $\mu$
+
+### Correct Answer
+FALSE
+TRUE
+TRUE
+FALSE
+FALSE
+
+### Solution:
+The correct answers are **$\bar{y}$** and **$\bar{x}$**.
+
+Sample means are denoted using **bar notation** (e.g., $\bar{x}$ or $\bar{y}$), where the bar over the variable indicates the mean of the sample data.
+
+**Why the other options are incorrect:**
+
+* **$\mu$** (mu) is the symbol for the **population mean**, not the sample mean. Greek letters are reserved for population parameters.
+
+* **$\hat{x}$** (x-hat) typically represents a **predicted or fitted value** in regression analysis, not a sample mean. While both are estimates, they serve different purposes.
+
+* **$\sigma$** (sigma) is the symbol for the **population standard deviation**, not a measure of central tendency.
+
+**Key distinction:** Sample statistics use Roman letters with special notation (like the bar), while population parameters use Greek letters.
+
+<br>
+
+---
+
+<div class="item-nav" style="display:flex; gap:1rem; justify-content:space-between; margin: 1rem 0 2rem 0;"><a href="item_2.html">← Previous (item_2)</a><a href="item_4.html">Next (item_4) →</a></div>
+

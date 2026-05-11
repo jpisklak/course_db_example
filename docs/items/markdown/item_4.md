@@ -1,0 +1,43 @@
+### Question 
+A researcher had five different groups of rats in an experiment. Each group of rats was given a different dosage of caffeine. The number of rats in each group and their dosage in milligrams (mg) is below. What was the mean dose of caffeine across all the rats?
+
+| Group   | Rats | Dose |
+|---------|------|------|
+| Control | 14   | 0    |
+| A       | 9    | 4    |
+| B       | 11   | 8    |
+| C       | 6    | 16   |
+| D       | 15   | 32   |
+
+
+### Correct Answer
+12.72727
+
+### Solution:
+The mean dose is **12.73 mg** (rounded to two decimal places).
+
+This is a **weighted mean** problem, where each dose is weighted by the number of rats receiving that dose.
+
+The formula is:
+$$\bar{x} = \frac{\sum_{i=1}^{n} w_i x_i}{\sum_{i=1}^{n} w_i}$$
+
+Calculating:
+$$
+\begin{align}
+\bar{x}
+&= \frac{14 \times 0 + 9 \times 4 + 11 \times 8 + 6 \times 16 + 15 \times 32}{14 + 9 + 11 + 6 + 15} \\[0.5em]
+&= \frac{0 + 36 + 88 + 96 + 480}{55} \\[0.5em]
+&= \frac{700}{55} \\[0.5em] 
+&= 12.727\overline{27}
+\end{align}
+$$
+
+**R code:**
+
+```r
+x <- c(0, 4, 8, 16, 32)   # doses in mg
+w <- c(14, 9, 11, 6, 15)  # number of rats (weights)
+
+weighted_mean <- sum(x * w) / sum(w)
+weighted_mean
+```

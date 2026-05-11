@@ -1,6 +1,8 @@
 ```{r, echo = FALSE, results = 'hide'}
-# Generate data
-scores <- c(82, 87, 78, 89, 57, 64, 81, 98)
+# Data gen
+scores <- sample(30:100, 8)
+
+# Result
 res <- mean(scores)
 ```
 
@@ -8,14 +10,14 @@ Question
 ========
 A student scored the following percentages on their end of the year exams:
 
-* Alchemy: 82
-* Astrology: 87
-* Falconry: 78
-* Logic: 89
-* Music: 57
-* Swordsmanship: 64
-* Tarot: 81
-* Xylomancy: 98
+* Alchemy: `r scores[1]`
+* Astrology: `r scores[2]`
+* Falconry: `r scores[3]`
+* Logic: `r scores[4]`
+* Music: `r scores[5]`
+* Swordsmanship: `r scores[6]`
+* Tarot: `r scores[7]`
+* Xylomancy: `r scores[8]`
 
 What was their mean score?
 
@@ -24,16 +26,14 @@ Solution
 ========
 The mean score is calculated as:
 
-$$\frac{\sum x}{N} = \frac{82+87+78+89+57+64+81+98}{8} = \frac{636}{8} = 79.5$$
+$$\frac{\sum x}{N} = \frac{`r paste(scores, collapse = " + ")`}{`r length(scores)`} = \frac{`r sum(scores)`}{`r length(scores)`} = `r res`$$
 
-In R:
+**R Code:**
+
 ```r
-x <- c(82, 87, 78, 89, 57, 64, 81, 98)
+x <- c(`r paste(scores, collapse = ", ")`)
 mean(x)
 ```
-
-The mean score is **`r fmt(res, 2)`**.
-
 
 Meta-information
 ================

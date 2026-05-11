@@ -216,28 +216,27 @@ window.Quarto = {
 </div>
 <p>A student scored the following percentages on their end of the year exams:</p>
 <ul>
-<li>Alchemy: 82</li>
-<li>Astrology: 87</li>
-<li>Falconry: 78</li>
+<li>Alchemy: 47</li>
+<li>Astrology: 32</li>
+<li>Falconry: 37</li>
 <li>Logic: 89</li>
-<li>Music: 57</li>
-<li>Swordsmanship: 64</li>
-<li>Tarot: 81</li>
-<li>Xylomancy: 98</li>
+<li>Music: 56</li>
+<li>Swordsmanship: 35</li>
+<li>Tarot: 46</li>
+<li>Xylomancy: 34</li>
 </ul>
 <p>What was their mean score?</p>
 <section id="correct-answer" class="level3">
 <h3 class="anchored" data-anchor-id="correct-answer">Correct Answer</h3>
-<p>79.5</p>
+<p>47</p>
 </section>
 <section id="solution" class="level3">
 <h3 class="anchored" data-anchor-id="solution">Solution:</h3>
 <p>The mean score is calculated as:</p>
-<p><span class="math display">\[\frac{\sum x}{N} = \frac{82+87+78+89+57+64+81+98}{8} = \frac{636}{8} = 79.5\]</span></p>
-<p>In R:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">82</span>, <span class="dv">87</span>, <span class="dv">78</span>, <span class="dv">89</span>, <span class="dv">57</span>, <span class="dv">64</span>, <span class="dv">81</span>, <span class="dv">98</span>)</span>
+<p><span class="math display">\[\frac{\sum x}{N} = \frac{47 + 32 + 37 + 89 + 56 + 35 + 46 + 34}{8} = \frac{376}{8} = 47\]</span></p>
+<p><strong>R Code:</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">47</span>, <span class="dv">32</span>, <span class="dv">37</span>, <span class="dv">89</span>, <span class="dv">56</span>, <span class="dv">35</span>, <span class="dv">46</span>, <span class="dv">34</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The mean score is <strong>79.50</strong>.</p>
 <p><br></p>
 <hr>
 <div class="item-nav" style="display:flex; gap:1rem; justify-content:space-between; margin: 1rem 0 2rem 0;">

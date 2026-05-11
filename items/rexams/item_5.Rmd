@@ -1,30 +1,22 @@
 
-```{r data_gen, echo = FALSE, results = "hide", message = FALSE}
-# library(randomNames)
-# library(tidyverse)
+```{r, echo = FALSE, results = "hide", message = FALSE}
+library(randomNames)
+library(tidyverse)
 
-# set.seed(1778384294)
+# Values
 name <- randomNames(which.names = "first")
+rolls <- sort(sample(2:12, 20, replace = TRUE))
+roll_tab <- rolls |>
+  table() |>
+  as.data.frame()
 
-rolls <- sample(2:12, 20, replace = TRUE)
-sum_str = paste(sort(rolls), collapse = "+")
-
-table <- as.data.frame(table(rolls))
-table$prod <- paste(table$rolls, table$Freq, sep = "x")
-
-freq_678 <- filter(table, rolls %in% c(6, 7, 8))$Freq
-str_freq_678_add <- paste(freq_678, collapse = " + ")
-str_freq_678_comma <- paste(freq_678, collapse = ", ")
-
-freq_all <- table$Freq
-str_freq_all_add <- paste(freq_all, collapse = " + ")
-str_freq_all_comma <- paste(freq_all, collapse = ", ")
+freq_678 <- roll_tab$Freq[roll_tab$rolls %in% c(6, 7, 8)]
 
 ## Solution
-res <- sum(freq_678) / sum(freq_all) * 100
+res <- sum(freq_678) / sum(roll_tab$Freq) * 100
 
 ## Plot
-palette <- sample(palette.colors(palette = "Dark2"), 1)
+palette <- sample(palette.colors(palette = "Polychrome 36"), 1)
 
 plt <-
   ggplot(mapping = aes(x = rolls)) +
@@ -39,13 +31,13 @@ plt <-
     axis.title = element_text(size = 16)
   )
 
+# Save and load plot in temp dir
 fn <- "item_5"
 path <- file.path("items/rexams", paste0(fn, "_assets"))
 
 # Ensure matching tmp dir exists
 dir.create(path, recursive = TRUE, showWarnings = FALSE)
 
-# Save and load plot in temp dir
 ggsave(
   file.path(path, paste0(fn, ".svg")),
   plot = plt,
@@ -71,8 +63,8 @@ Each bar shows the number of times a certain value was rolled. Therefore the tot
 $$
 \begin{align}
 \text{Percent} &=
-\frac{`r str_freq_678_add`}{`r str_freq_all_add`} \times 100 \\[0.5em]
-&= \frac{`r sum(freq_678)`}{`r sum(freq_all)`} \times 100 \\[0.5em]
+\frac{`r paste(freq_678, collapse = "+")`}{`r paste(roll_tab$Freq, collapse = "+")`} \times 100 \\[0.5em]
+&= \frac{`r sum(freq_678)`}{`r sum(roll_tab$Freq)`} \times 100 \\[0.5em]
 &= `r fmt(res, 2)`
 \end{align}
 $$
@@ -81,9 +73,9 @@ $$
 
 **R Code:**
 
-```
-freq_678 <- c(`r str_freq_678_comma`)
-freq_tot <- c(`r str_freq_all_comma`)
+```r
+freq_678 <- c(`r paste(freq_678, collapse = ", ")`)
+freq_tot <- c(`r paste(roll_tab$Freq, collapse = ", ")`)
 
 sum(freq_678) / sum(freq_tot) * 100
 ```

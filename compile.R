@@ -23,4 +23,4 @@ rm(list = setdiff(ls(), lsf.str())) # remove non-function variables
 quarto_render()
 quarto_preview()
 
-quarto_preview_stop()
+# quarto_preview_stop()
