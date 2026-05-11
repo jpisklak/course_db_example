@@ -57,7 +57,7 @@ for (i in 1:length(files)) {
     "\n\n",
     "Correct Answer:",
     "\n",
-    paste(q_i$exam1$exercise1$metainfo$solution, sep = "", collapse = "\n"),
+    paste(q_i$exam1$exercise1$metainfo$solution, collapse = ", "),
     sep = "",
     file = file.path(dir_txt, paste0(fn, ".txt"))
   )
@@ -75,7 +75,7 @@ for (i in 1:length(files)) {
     "\n\n",
     "### Correct Answer",
     "\n",
-    paste(q_i$exam1$exercise1$metainfo$solution, sep = "", collapse = "\n"),
+    paste(q_i$exam1$exercise1$metainfo$solution, collapse = ", "),
     "\n\n",
     "### Solution:",
     "\n",

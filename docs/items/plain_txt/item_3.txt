@@ -8,8 +8,4 @@ Which of the following is a valid way to label a sample mean? Select all that ap
 *  $\mu$
 
 Correct Answer:
-FALSE
-TRUE
-TRUE
-FALSE
-FALSE
+FALSE, TRUE, TRUE, FALSE, FALSE
